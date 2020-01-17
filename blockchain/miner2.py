@@ -25,11 +25,10 @@ def proof_of_work(last_proof):
 
     print("Searching for next proof")
 
-    proof = 999999
+    proof = 0
 
     while valid_proof(last_proof, proof) is False and 8 > timer() - start:
-        proof = randrange(1234321,9999999999)
-        print(proof)
+        proof = randrange(-112343214231,0)
 
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
