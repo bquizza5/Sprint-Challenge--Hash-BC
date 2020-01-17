@@ -25,7 +25,7 @@ def proof_of_work(last_proof):
 
     print("Searching for next proof")
 
-    proof = 999999
+    proof = 0
 
     while valid_proof(last_proof, proof) is False:
         proof += 1
