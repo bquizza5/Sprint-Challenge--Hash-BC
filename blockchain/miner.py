@@ -8,7 +8,7 @@ from uuid import uuid4
 
 from timeit import default_timer as timer
 
-import random
+from random import randrange
 
 
 def proof_of_work(last_proof):
@@ -27,8 +27,9 @@ def proof_of_work(last_proof):
 
     proof = 999999
 
-    while valid_proof(last_proof, proof) is False:
-        proof += 1
+    while valid_proof(last_proof, proof) is False and 8 > timer() - start:
+        proof = randrange(1234321,9999999999)
+        print(proof)
 
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
